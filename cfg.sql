@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 20, 2020 at 10:52 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Generation Time: Dec 29, 2021 at 08:11 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -43,7 +42,6 @@ INSERT INTO `rule` (`id`, `head`, `body`) VALUES
 (2, 'K', 'K O'),
 (3, 'K', 'S P'),
 (14, 'K', 'K Pel'),
-(15, 'S', 'FN Pn'),
 (16, 'Pn', 'punika'),
 (17, 'FN', 'FN FN'),
 (18, 'FN', 'Anak'),
@@ -54,7 +52,7 @@ INSERT INTO `rule` (`id`, `head`, `body`) VALUES
 (23, 'FN', 'Bali'),
 (24, 'P', 'Ps FN'),
 (25, 'Ps', 'pinaka'),
-(26, 'FN', 'Kalih'),
+(26, 'Bil', 'Kalih'),
 (27, 'FN', 'diri'),
 (28, 'FN', 'negatif'),
 (29, 'FN', 'Covid-19'),
@@ -62,8 +60,6 @@ INSERT INTO `rule` (`id`, `head`, `body`) VALUES
 (31, 'Ps', 'sampun'),
 (32, 'FV', 'Kaucap'),
 (33, 'Pel', 'FN FN'),
-(34, 'FN', 'ring'),
-(35, 'FN', 'FN Pn'),
 (36, 'FN', 'PMI'),
 (37, 'FN', 'pulah'),
 (38, 'FN', 'palih'),
@@ -103,7 +99,6 @@ INSERT INTO `rule` (`id`, `head`, `body`) VALUES
 (72, 'FV', 'dados'),
 (73, 'Pn', 'para'),
 (74, 'Pn', 'puniki'),
-(75, 'Pel', 'FN Pn'),
 (76, 'FN', 'Kadek'),
 (77, 'FN', 'Suprapta'),
 (78, 'FN', 'Meranggi'),
@@ -143,22 +138,21 @@ INSERT INTO `rule` (`id`, `head`, `body`) VALUES
 (118, 'P', 'negesan'),
 (120, 'FN', 'Wayan'),
 (121, 'FN', 'Koster'),
-(122, 'FN', 'kauratiang'),
+(122, 'FV', 'kauratiang'),
 (123, 'FN', 'Desa'),
 (124, 'FN', 'Adat'),
-(125, 'Pn', 'indik'),
 (126, 'Pn', 'ring'),
 (127, 'FN', 'pidartane'),
 (128, 'P', 'maweweh'),
 (129, 'Ket', 'FV FN'),
 (130, 'FN', 'Makasami'),
 (131, 'FN', 'pasien'),
-(132, 'FN', '15'),
+(132, 'Bil', '15'),
 (133, 'FN', 'Respati'),
 (134, 'FV', 'kantos'),
 (135, 'FN', 'positif'),
 (136, 'FV', 'katambanin'),
-(137, 'FN', '11'),
+(137, 'Bil', '11'),
 (138, 'FN', 'Bd FS'),
 (139, 'Bd', 'rumah'),
 (140, 'FS', 'sakit'),
@@ -185,7 +179,6 @@ INSERT INTO `rule` (`id`, `head`, `body`) VALUES
 (161, 'P', 'FS FV'),
 (162, 'FS', 'durung'),
 (163, 'FV', 'ngambil'),
-(164, 'O', 'FN Pn'),
 (165, 'FN', 'pemargi'),
 (166, 'FN', 'Industri'),
 (167, 'FN', 'Pariwisata'),
@@ -285,10 +278,19 @@ INSERT INTO `rule` (`id`, `head`, `body`) VALUES
 (262, 'FN', 'bangsa'),
 (263, 'FN', 'sejarah'),
 (264, 'P', 'ngaptiang'),
-(265, 'S', 'Titiang'),
 (266, 'FN', 'sinalih'),
 (267, 'FN', 'tunggil'),
-(268, 'FN', 'strategis');
+(268, 'FN', 'strategis'),
+(269, 'FN', 'Bil FN'),
+(270, 'FN', 'porsi'),
+(271, 'FN', 'abon'),
+(272, 'FN', 'pindang'),
+(273, 'FV', 'makarya'),
+(274, 'FN', 'Ibu'),
+(275, 'FN', 'Jero'),
+(276, 'Ps', 'prasida'),
+(277, 'FN', 'Dewa'),
+(278, 'FN', 'Indra');
 
 -- --------------------------------------------------------
 
@@ -402,7 +404,7 @@ ALTER TABLE `sentence`
 -- AUTO_INCREMENT for table `rule`
 --
 ALTER TABLE `rule`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=269;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=279;
 
 --
 -- AUTO_INCREMENT for table `sentence`
