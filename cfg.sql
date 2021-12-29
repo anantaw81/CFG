@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2021 at 08:11 PM
+-- Generation Time: Dec 29, 2021 at 10:22 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -104,7 +104,6 @@ INSERT INTO `rule` (`id`, `head`, `body`) VALUES
 (78, 'FN', 'Meranggi'),
 (79, 'FN', 'pengalgal'),
 (80, 'FN', 'acara'),
-(81, 'S', 'Dane'),
 (82, 'FN', 'baga'),
 (83, 'S', 'Titiang'),
 (84, 'P', 'ngelaksanayang'),
@@ -145,7 +144,6 @@ INSERT INTO `rule` (`id`, `head`, `body`) VALUES
 (127, 'FN', 'pidartane'),
 (128, 'P', 'maweweh'),
 (129, 'Ket', 'FV FN'),
-(130, 'FN', 'Makasami'),
 (131, 'FN', 'pasien'),
 (132, 'Bil', '15'),
 (133, 'FN', 'Respati'),
@@ -210,7 +208,6 @@ INSERT INTO `rule` (`id`, `head`, `body`) VALUES
 (193, 'S', 'Pemedek'),
 (194, 'FN', 'banget'),
 (195, 'FV', 'kaaptiyang'),
-(196, 'FV', 'nyarengin'),
 (197, 'FV', 'nyaga'),
 (198, 'FN', 'karesikan'),
 (199, 'FN', 'wiadin'),
