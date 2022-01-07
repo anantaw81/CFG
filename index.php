@@ -37,8 +37,7 @@ if(isset($_POST["check"])){
             for($y=0; $y<$iter; $y++){
                 $l= $j+$set-1;
                 $r= $j+$set;
-
-                //melakukan komninasi
+                //melakukan kombinasi
                 $list=explode(' ',$table[$j][$l]);
                 $list2=explode(' ',$table[$r][$p]);
                 $arr1=getCombinations($list, $list2);
@@ -47,8 +46,6 @@ if(isset($_POST["check"])){
                 $set++;
                 
             }
-           
-
             $datahead=Array();
             $arr2=array_unique($arr2);
             //mengcek hasil union di db
@@ -69,12 +66,21 @@ if(isset($_POST["check"])){
     $iter++;
     }
     $validSentece='none';
-    if( in_array('K',explode(' ',$table[0][count($sentence)-1])) ){
-        $validSentece='VALID';
+    $sp = in_array('KSP',explode(' ',$table[0][count($sentence)-1]));
+    $spo = in_array('KSPO',explode(' ',$table[0][count($sentence)-1]));
+    $spk = in_array('KSPK',explode(' ',$table[0][count($sentence)-1]));
+    $spok = in_array('KSPOK',explode(' ',$table[0][count($sentence)-1]));
+    if($spok){
+        $validSentece='VALID | Dideteksi : S P O K';
+    }else if($spk){
+        $validSentece='VALID | Dideteksi : S P K';
+    }else if($spo){
+        $validSentece='VALID | Dideteksi : S P O';
+    }else if($sp){
+        $validSentece='VALID | Dideteksi : S P';
     }else{
         $validSentece='TIDAK VALID';
     }
-
 }
 
 function cekLesikon($key,$conn){
@@ -171,7 +177,7 @@ function getCombinations(...$arrays) {
                         </div>
                         <div class="col-6">
                             <h6> <strong>Checking Result :</strong></h6>
-                            <?php if($validSentece=='VALID'){?>
+                            <?php if($validSentece!='TIDAK VALID'){?>
                                 <p class="text-success text--bold"><?=$validSentece?></p>
                             <?php } else {?>
                                 <p class="text-danger text--bold"><?=$validSentece?></p>

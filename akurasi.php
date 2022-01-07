@@ -10,9 +10,9 @@ if(isset($_POST['uji'])){
     if(mysqli_num_rows($query)>0){
         while($data=mysqli_fetch_assoc($query)){
             $datatest[]=$data;
+            
         }
     }
-
     
     for($e=0; $e<count($datatest); $e++){
         $sentence=explode(" ", strtolower($datatest[$e]["kalimat"]));
@@ -34,10 +34,9 @@ if(isset($_POST['uji'])){
         }
         
         //var_dump($table);
-
         $iter=1;
         $arr1=array();
-        $arr2=Array();
+        $arr2=Array(); 
         $l=0;
         $r=0;
         for($i=count($sentence)-1; $i>=0; $i--){
@@ -57,9 +56,7 @@ if(isset($_POST['uji'])){
                     $arr1=[]; $list=[]; $list2=[];
 
                     $set++;
-                    
                 }
-            
                 //melakukan union 
                 $datahead=Array();
                 $arr2=array_unique($arr2);
@@ -75,15 +72,15 @@ if(isset($_POST['uji'])){
 
                 $table[$j][$j+$iter]= implode(' ',array_unique($datahead));
                 $arr2=[]; 
-
-                
             }
-
         $iter++;
         }
-
         $validSentece='Tidak Valid';
-        if( in_array('K',explode(' ',$table[0][count($sentence)-1])) ){
+        $sp = in_array('KSP',explode(' ',$table[0][count($sentence)-1]));
+        $spo = in_array('KSPO',explode(' ',$table[0][count($sentence)-1]));
+        $spk = in_array('KSPK',explode(' ',$table[0][count($sentence)-1]));
+        $spok = in_array('KSPOK',explode(' ',$table[0][count($sentence)-1]));
+        if( $sp OR $spo OR $spk OR $spok ){
             $validSentece='Valid';
             $yes++;
         }else{
@@ -98,10 +95,6 @@ if(isset($_POST['uji'])){
    
 
 }
-
-
-
-    
 
 
 function cekLesikon($key,$conn){
